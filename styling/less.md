@@ -1,0 +1,3 @@
+# LESS - Least Effortful Stylesheets
+
+LESS (Leaner Style Sheets) is a dynamic preprocessor style sheet language that can be compiled into CSS. It extends CSS by introducing features such as `variables`, `mixins`, `nested rules`, and `functions`, which help to make stylesheets more maintainable and easier to write. LESS allows developers to create reusable styles and manage complex stylesheets more efficiently, ultimately enhancing the styling process in web development.

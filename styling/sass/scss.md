@@ -1,0 +1,3 @@
+# SCSS - Sassy CSS
+
+SCSS (Sassy CSS) is a syntax of SASS (Syntactically Awesome Stylesheets) that is fully compatible with standard CSS. It allows you to use all the features of SASS, such as `variables`, `nested rules`, `mixins`, and `functions`, while maintaining a syntax that closely resembles traditional CSS. SCSS files use the `.scss` file extension and can be compiled into standard CSS for use in web development.

@@ -1,0 +1,5 @@
+- a framework for building web applications using the Model-View-Controller (MVC) architectural pattern
+- developed by Microsoft as part of the ASP.NET framework
+- older frame work that runs only on Windows and the full .NET Framework
+- primarily used for building dynamic, data-driven web applications and APIs
+- web apps built using this framework can only be developed on Windows beacuse the framework is built ontop of the full .NET Framework, which is Windows-only
