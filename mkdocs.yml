@@ -1,0 +1,38 @@
+site_name: Fundamentals Docs
+site_url: https://yavor-mishev.github.io/fundamentals-docs/
+repo_url: https://github.com/yavor-mishev/fundamentals-docs
+
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+# docs/ holds only the markdown notes + their images; nothing else to exclude.

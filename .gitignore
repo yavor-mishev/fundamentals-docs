@@ -1,5 +1,9 @@
 node_modules/
 
+# MkDocs build output
+site/
+.cache/
+
 # Visual Studio files
 .vs/
 *.sln
