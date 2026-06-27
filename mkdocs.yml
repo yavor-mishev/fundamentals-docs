@@ -36,3 +36,90 @@ markdown_extensions:
       permalink: true
 
 # docs/ holds only the markdown notes + their images; nothing else to exclude.
+
+nav:
+  - Home: index.md
+  - Fundamentals:
+      - Algorithms: algorithms/algorithms.md
+      - Regex: regex/regex.md
+      - Markdown: markdown/markdown-cheatsheet.md
+  - Languages:
+      - C++:
+          - Overview: cpp/00_cpp.md
+          - Variables: cpp/01_variables.md
+          - Pointers: cpp/02_pointers.md
+          - References: cpp/03_references.md
+          - Classes: cpp/04_classes.md
+          - Static: cpp/05_static.md
+          - Constructors: cpp/06_constructors.md
+          - Arrays: cpp/arrays.md
+      - C#: cs/c-sharp.md
+      - JavaScript:
+          - Overview: javascript/javascript.md
+          - Event Loop: javascript/event-loop.md
+          - Prototypal Inheritance: javascript/prototypical-inheritance.md
+          - Web API: javascript/web-api.md
+      - TypeScript: ts/ts.md
+  - Runtimes & Engines:
+      - Node.js: nodejs/nodejs.md
+      - npm: nodejs/npm.md
+      - Web Engines:
+          - V8: web-engines/js-engines/v8.md
+          - WebKit: web-engines/styles-layout-engines/webkit.md
+  - The Web Platform:
+      - HTML: html/html.md
+      - HTTP: http/http.md
+      - Web Servers: web-servers/web-server.md
+      - Styling:
+          - CSS: styling/css.md
+          - LESS: styling/less.md
+          - SASS: styling/sass/sass.md
+          - SCSS: styling/sass/scss.md
+  - Architecture Patterns:
+      - MVC: asp-net-mvc/mvc.md
+      - MVVM: mvvm/mvvm.md
+  - .NET & ASP.NET:
+      - .NET Overview: dotnet/dotnet.md
+      - ASP.NET Core: dotnet/web/asp-net-core.md
+      - ASP.NET MVC: dotnet/web/asp-net-mvc.md
+      - MVC vs Core: dotnet/web/mvc-vs-core.md
+      - Blazor: cs/blazor/blazor.md
+      - Sitefinity: sitefinity/onboarding.md
+  - JS Frameworks & Libraries:
+      - React:
+          - JS Refresher: react/00_js-refresher.md
+          - React Essentials: react/01_react-essentials.md
+          - Getting Started (Udemy): react/udemy/getting-started.md
+          - Essentials (Udemy): react/udemy/react-essentials/react-essentials.md
+          - Essentials Deep Dive (Udemy): react/udemy/react-essentials-deep-dive/react-essentials-deep-dive.md
+      - Next.js:
+          - Overview: next-js/next-js.md
+          - Dashboard Notes: next-js/nextjs-dashboard/README.md
+      - jQuery:
+          - Overview: jquery/README.md
+          - Plugins: jquery/plugins.md
+      - GSAP: gsap/gsap.md
+      - PixiJS:
+          - Overview: pixi/pixijs.md
+          - Layers: pixi/pixi-layers.md
+          - Projection: pixi/pixi-projection.md
+  - Backend & APIs:
+      - APIs: api/api.md
+      - Express: nodejs/express.md
+      - RESTful Services: nodejs/restful-services.md
+      - Node Web Server (demo): projects/node-web-server/docs.md
+  - Testing:
+      - Jest: jest/jest.md
+      - Selenium: selenium/selenium-webdriver.md
+  - Tooling & Environment:
+      - Git: git/README.md
+      - Docker: docker/docker.md
+      - Linux:
+          - Boot Process: linux/boot-process.md
+          - systemd: linux/systemd.md
+      - Terminal vs Shell:
+          - Terminal vs Shell: terminal-vs-shell/terminal-vs-shell.md
+          - Shell: terminal-vs-shell/shell.md
+  - Other:
+      - Blender: blender/blender.md
+      - AI / Prompting: ai/prompting.md
