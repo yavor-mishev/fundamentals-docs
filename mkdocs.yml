@@ -25,6 +25,9 @@ theme:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
   - redirects:
       redirect_maps:
         algorithms/algorithms.md: fundamentals/algorithms.md
