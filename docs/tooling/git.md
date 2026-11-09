@@ -4,17 +4,15 @@
 
 Here i'll list the steps needed when you want to create a repository share on github for others to see or contribute to or even for yourself to have access from more than 1 machine
 
-1. Go to your Dashboard in GitHub and click on the green `New` button
+1. On your GitHub Dashboard, click the **+** button in the top-right corner and choose **New repository**
 
-![Step 1](../../media/git/create-new-repo-1.png)
+![Step 1: the + menu with New repository highlighted](images/git/create-new-repo-1.png)
 
 2. Add yoursefl as the owner, add a repository name and optionally a short description of what this repo is about
 
-![Step 2](../../media/git/create-new-repo-2.png)
-
 3. Follow the steps provided by GitHub.
 
-![Step 3](../../media/git/create-new-repo-3.png)
+![Step 3: GitHub's quick setup page for a new repository](images/git/create-new-repo-3.png)
 
 I usualy prefer to have already created a folder and added some content to it so I could go ahead with the second set of instructions. Make sure to run these commands form the project folder. I use the integrated terminal in VSCode (CTRL+`)
 
