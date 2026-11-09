@@ -274,13 +274,13 @@ Your Web Page
 
 | Topic | One-Liner | File to Review |
 |-------|-----------|----------------|
-| **Algorithms** | Step-by-step instructions to solve problems | [algorithms.md](algorithms/algorithms.md) |
-| **Event Loop** | How JS handles async without blocking | [event-loop.md](javascript/event-loop.md) |
-| **HTTP** | Request/response protocol, ports 80/443 | [web-server.md](web-servers/web-server.md) |
-| **MVC** | Model-View-Controller separation pattern | [mvc.md](asp-net-mvc/mvc.md) |
-| **MVVM** | Observable data binding between VM and View | [mvvm.md](mvvm/mvvm.md) |
-| **DOM** | HTML structure that JS can manipulate | [html.md](html/html.md) |
-| **CLR** | .NET's runtime that compiles IL to native | [c-sharp.md](cs/c-sharp.md) |
+| **Algorithms** | Step-by-step instructions to solve problems | [algorithms.md](fundamentals/algorithms.md) |
+| **Event Loop** | How JS handles async without blocking | [event-loop.md](languages/javascript/event-loop.md) |
+| **HTTP** | Request/response protocol, ports 80/443 | [web-server.md](backend/web-servers.md) |
+| **MVC** | Model-View-Controller separation pattern | [mvc.md](fundamentals/architecture-patterns/mvc.md) |
+| **MVVM** | Observable data binding between VM and View | [mvvm.md](fundamentals/architecture-patterns/mvvm.md) |
+| **DOM** | HTML structure that JS can manipulate | [html.md](web/html.md) |
+| **CLR** | .NET's runtime that compiles IL to native | [c-sharp.md](languages/csharp.md) |
 | **V8** | Engine that executes JavaScript | *(not written yet)* |
 
 ### "What's the Difference?" - Common Pairs

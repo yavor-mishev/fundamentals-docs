@@ -25,6 +25,64 @@ theme:
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        algorithms/algorithms.md: fundamentals/algorithms.md
+        regex/regex.md: fundamentals/regex.md
+        http/http.md: fundamentals/http.md
+        api/api.md: fundamentals/apis.md
+        asp-net-mvc/mvc.md: fundamentals/architecture-patterns/mvc.md
+        mvvm/mvvm.md: fundamentals/architecture-patterns/mvvm.md
+        cpp/00_cpp.md: languages/cpp/index.md
+        cpp/01_variables.md: languages/cpp/variables.md
+        cpp/02_pointers.md: languages/cpp/pointers.md
+        cpp/03_references.md: languages/cpp/references.md
+        cpp/04_classes.md: languages/cpp/classes.md
+        cpp/05_static.md: languages/cpp/static.md
+        cpp/06_constructors.md: languages/cpp/constructors.md
+        cs/c-sharp.md: languages/csharp.md
+        javascript/javascript.md: languages/javascript/index.md
+        javascript/event-loop.md: languages/javascript/event-loop.md
+        javascript/prototypical-inheritance.md: languages/javascript/prototypal-inheritance.md
+        ts/ts.md: languages/typescript.md
+        html/html.md: web/html.md
+        styling/sass/sass.md: web/styling/sass.md
+        react/00_js-refresher.md: web/react/js-refresher.md
+        react/01_react-essentials.md: web/react/react-essentials.md
+        react/udemy/getting-started.md: web/react/udemy/getting-started.md
+        next-js/next-js.md: web/nextjs/index.md
+        jquery/README.md: web/jquery/index.md
+        jquery/plugins.md: web/jquery/plugins.md
+        nodejs/nodejs.md: backend/nodejs/index.md
+        nodejs/npm.md: backend/nodejs/npm.md
+        nodejs/express.md: backend/nodejs/express.md
+        projects/node-web-server/docs.md: backend/nodejs/node-web-server.md
+        web-servers/web-server.md: backend/web-servers.md
+        dotnet/dotnet.md: backend/dotnet/index.md
+        dotnet/web/asp-net-core.md: backend/dotnet/asp-net-core.md
+        dotnet/web/asp-net-mvc.md: backend/dotnet/asp-net-mvc.md
+        dotnet/web/mvc-vs-core.md: backend/dotnet/mvc-vs-core.md
+        sitefinity/onboarding.md: backend/dotnet/sitefinity.md
+        pixi/pixijs.md: gamedev/pixi/index.md
+        pixi/pixi-layers.md: gamedev/pixi/layers.md
+        pixi/pixi-projection.md: gamedev/pixi/projection.md
+        pixi/spine.md: gamedev/pixi/spine.md
+        gsap/gsap.md: gamedev/gsap.md
+        blender/blender.md: gamedev/blender.md
+        git/README.md: tooling/git.md
+        terminal-vs-shell/terminal-vs-shell.md: tooling/shell/index.md
+        terminal-vs-shell/shell.md: tooling/shell/shell-basics.md
+        terminal-vs-shell/shells-compared.md: tooling/shell/shells-compared.md
+        terminal-vs-shell/customizing-your-shell.md: tooling/shell/customizing-your-shell.md
+        terminal-vs-shell/oh-my-posh-prompt.md: tooling/shell/oh-my-posh-prompt.md
+        docker/docker.md: tooling/docker.md
+        linux/boot-process.md: tooling/linux/boot-process.md
+        linux/systemd.md: tooling/linux/systemd.md
+        lsp/lsp.md: tooling/lsp.md
+        markdown/markdown-cheatsheet.md: tooling/markdown.md
+        jest/jest.md: tooling/testing/jest.md
+        selenium/selenium-webdriver.md: tooling/testing/selenium.md
+        ai/prompting.md: other/ai-prompting.md
 
 markdown_extensions:
   - admonition
@@ -38,91 +96,91 @@ markdown_extensions:
 # Empty or one-line pages: shown by `mkdocs serve`, left out of the published site.
 # Remove a line here (and add the page to nav) once it has real content.
 draft_docs: |
-  cpp/arrays.md
-  javascript/web-api.md
-  web-engines/
-  react/udemy/react-essentials/
-  react/udemy/react-essentials-deep-dive/
-  styling/css.md
-  styling/less.md
-  styling/sass/scss.md
-  cs/blazor/blazor.md
-  nodejs/restful-services.md
-  next-js/nextjs-dashboard/
+  languages/cpp/arrays.md
+  languages/javascript/web-api.md
+  web/engines/
+  web/react/udemy/essentials.md
+  web/react/udemy/essentials-deep-dive.md
+  web/styling/css.md
+  web/styling/less.md
+  web/styling/scss.md
+  backend/dotnet/blazor.md
+  backend/nodejs/restful-services.md
+  web/nextjs/dashboard.md
 
 nav:
   - Home: index.md
   - Fundamentals:
-      - Algorithms: algorithms/algorithms.md
-      - Regex: regex/regex.md
-      - HTTP: http/http.md
-      - APIs: api/api.md
+      - Algorithms: fundamentals/algorithms.md
+      - Regex: fundamentals/regex.md
+      - HTTP: fundamentals/http.md
+      - APIs: fundamentals/apis.md
       - Architecture Patterns:
-          - MVC: asp-net-mvc/mvc.md
-          - MVVM: mvvm/mvvm.md
+          - MVC: fundamentals/architecture-patterns/mvc.md
+          - MVVM: fundamentals/architecture-patterns/mvvm.md
   - Languages:
       - C++:
-          - Overview: cpp/00_cpp.md
-          - Variables: cpp/01_variables.md
-          - Pointers: cpp/02_pointers.md
-          - References: cpp/03_references.md
-          - Classes: cpp/04_classes.md
-          - Static: cpp/05_static.md
-          - Constructors: cpp/06_constructors.md
-      - C#: cs/c-sharp.md
+          - Overview: languages/cpp/index.md
+          - Variables: languages/cpp/variables.md
+          - Pointers: languages/cpp/pointers.md
+          - References: languages/cpp/references.md
+          - Classes: languages/cpp/classes.md
+          - Static: languages/cpp/static.md
+          - Constructors: languages/cpp/constructors.md
+      - C#: languages/csharp.md
       - JavaScript:
-          - Overview: javascript/javascript.md
-          - Event Loop: javascript/event-loop.md
-          - Prototypal Inheritance: javascript/prototypical-inheritance.md
-      - TypeScript: ts/ts.md
+          - Overview: languages/javascript/index.md
+          - Event Loop: languages/javascript/event-loop.md
+          - Prototypal Inheritance: languages/javascript/prototypal-inheritance.md
+      - TypeScript: languages/typescript.md
   - Web Frontend:
-      - HTML: html/html.md
-      - SASS: styling/sass/sass.md
+      - HTML: web/html.md
+      - SASS: web/styling/sass.md
       - React:
-          - JS Refresher: react/00_js-refresher.md
-          - React Essentials: react/01_react-essentials.md
-          - Getting Started (Udemy): react/udemy/getting-started.md
-      - Next.js: next-js/next-js.md
+          - JS Refresher: web/react/js-refresher.md
+          - React Essentials: web/react/react-essentials.md
+          - Getting Started (Udemy): web/react/udemy/getting-started.md
+      - Next.js: web/nextjs/index.md
       - jQuery:
-          - Overview: jquery/README.md
-          - Plugins: jquery/plugins.md
+          - Overview: web/jquery/index.md
+          - Plugins: web/jquery/plugins.md
   - Backend:
       - Node.js:
-          - Overview: nodejs/nodejs.md
-          - npm: nodejs/npm.md
-          - Express: nodejs/express.md
-          - Node Web Server (demo): projects/node-web-server/docs.md
-      - Web Servers: web-servers/web-server.md
+          - Overview: backend/nodejs/index.md
+          - npm: backend/nodejs/npm.md
+          - Express: backend/nodejs/express.md
+          - Node Web Server (demo): backend/nodejs/node-web-server.md
+      - Web Servers: backend/web-servers.md
       - .NET:
-          - Overview: dotnet/dotnet.md
-          - ASP.NET Core: dotnet/web/asp-net-core.md
-          - ASP.NET MVC: dotnet/web/asp-net-mvc.md
-          - MVC vs Core: dotnet/web/mvc-vs-core.md
-          - Sitefinity: sitefinity/onboarding.md
+          - Overview: backend/dotnet/index.md
+          - ASP.NET Core: backend/dotnet/asp-net-core.md
+          - ASP.NET MVC: backend/dotnet/asp-net-mvc.md
+          - MVC vs Core: backend/dotnet/mvc-vs-core.md
+          - Sitefinity: backend/dotnet/sitefinity.md
   - Game Dev:
       - PixiJS:
-          - Overview: pixi/pixijs.md
-          - Layers: pixi/pixi-layers.md
-          - Projection: pixi/pixi-projection.md
-          - Spine: pixi/spine.md
-      - GSAP: gsap/gsap.md
-      - Blender: blender/blender.md
+          - Overview: gamedev/pixi/index.md
+          - Layers: gamedev/pixi/layers.md
+          - Projection: gamedev/pixi/projection.md
+          - Spine: gamedev/pixi/spine.md
+      - GSAP: gamedev/gsap.md
+      - Blender: gamedev/blender.md
   - Tooling:
-      - Git: git/README.md
+      - Git: tooling/git.md
       - Terminal & Shell:
-          - Terminal vs Shell: terminal-vs-shell/terminal-vs-shell.md
-          - Shell Basics: terminal-vs-shell/shell.md
-          - Shells Compared: terminal-vs-shell/shells-compared.md
-          - Customizing Your Shell: terminal-vs-shell/customizing-your-shell.md
-          - Prompt with Oh My Posh: terminal-vs-shell/oh-my-posh-prompt.md
-      - Docker: docker/docker.md
+          - Terminal vs Shell: tooling/shell/index.md
+          - Shell Basics: tooling/shell/shell-basics.md
+          - Shells Compared: tooling/shell/shells-compared.md
+          - Customizing Your Shell: tooling/shell/customizing-your-shell.md
+          - Prompt with Oh My Posh: tooling/shell/oh-my-posh-prompt.md
+      - Docker: tooling/docker.md
       - Linux:
-          - Boot Process: linux/boot-process.md
-          - systemd: linux/systemd.md
-      - LSP: lsp/lsp.md
-      - Markdown: markdown/markdown-cheatsheet.md
+          - Boot Process: tooling/linux/boot-process.md
+          - systemd: tooling/linux/systemd.md
+      - LSP: tooling/lsp.md
+      - Markdown: tooling/markdown.md
       - Testing:
-          - Jest: jest/jest.md
-          - Selenium: selenium/selenium-webdriver.md
+          - Jest: tooling/testing/jest.md
+          - Selenium: tooling/testing/selenium.md
   - Other:
-      - AI / Prompting: ai/prompting.md
+      - AI / Prompting: other/ai-prompting.md
