@@ -114,6 +114,7 @@ nav:
       - Selenium: selenium/selenium-webdriver.md
   - Tooling & Environment:
       - Git: git/README.md
+      - LSP: lsp/lsp.md
       - Docker: docker/docker.md
       - Linux:
           - Boot Process: linux/boot-process.md
