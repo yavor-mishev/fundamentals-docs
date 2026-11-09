@@ -103,6 +103,7 @@ nav:
           - Overview: pixi/pixijs.md
           - Layers: pixi/pixi-layers.md
           - Projection: pixi/pixi-projection.md
+          - Spine: pixi/spine.md
   - Backend & APIs:
       - APIs: api/api.md
       - Express: nodejs/express.md
