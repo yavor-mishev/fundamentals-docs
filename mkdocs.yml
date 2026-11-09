@@ -55,7 +55,11 @@ nav:
   - Fundamentals:
       - Algorithms: algorithms/algorithms.md
       - Regex: regex/regex.md
-      - Markdown: markdown/markdown-cheatsheet.md
+      - HTTP: http/http.md
+      - APIs: api/api.md
+      - Architecture Patterns:
+          - MVC: asp-net-mvc/mvc.md
+          - MVVM: mvvm/mvvm.md
   - Languages:
       - C++:
           - Overview: cpp/00_cpp.md
@@ -71,25 +75,9 @@ nav:
           - Event Loop: javascript/event-loop.md
           - Prototypal Inheritance: javascript/prototypical-inheritance.md
       - TypeScript: ts/ts.md
-  - Runtimes & Engines:
-      - Node.js: nodejs/nodejs.md
-      - npm: nodejs/npm.md
-  - The Web Platform:
+  - Web Frontend:
       - HTML: html/html.md
-      - HTTP: http/http.md
-      - Web Servers: web-servers/web-server.md
-      - Styling:
-          - SASS: styling/sass/sass.md
-  - Architecture Patterns:
-      - MVC: asp-net-mvc/mvc.md
-      - MVVM: mvvm/mvvm.md
-  - .NET & ASP.NET:
-      - .NET Overview: dotnet/dotnet.md
-      - ASP.NET Core: dotnet/web/asp-net-core.md
-      - ASP.NET MVC: dotnet/web/asp-net-mvc.md
-      - MVC vs Core: dotnet/web/mvc-vs-core.md
-      - Sitefinity: sitefinity/onboarding.md
-  - JS Frameworks & Libraries:
+      - SASS: styling/sass/sass.md
       - React:
           - JS Refresher: react/00_js-refresher.md
           - React Essentials: react/01_react-essentials.md
@@ -98,32 +86,43 @@ nav:
       - jQuery:
           - Overview: jquery/README.md
           - Plugins: jquery/plugins.md
-      - GSAP: gsap/gsap.md
+  - Backend:
+      - Node.js:
+          - Overview: nodejs/nodejs.md
+          - npm: nodejs/npm.md
+          - Express: nodejs/express.md
+          - Node Web Server (demo): projects/node-web-server/docs.md
+      - Web Servers: web-servers/web-server.md
+      - .NET:
+          - Overview: dotnet/dotnet.md
+          - ASP.NET Core: dotnet/web/asp-net-core.md
+          - ASP.NET MVC: dotnet/web/asp-net-mvc.md
+          - MVC vs Core: dotnet/web/mvc-vs-core.md
+          - Sitefinity: sitefinity/onboarding.md
+  - Game Dev:
       - PixiJS:
           - Overview: pixi/pixijs.md
           - Layers: pixi/pixi-layers.md
           - Projection: pixi/pixi-projection.md
           - Spine: pixi/spine.md
-  - Backend & APIs:
-      - APIs: api/api.md
-      - Express: nodejs/express.md
-      - Node Web Server (demo): projects/node-web-server/docs.md
-  - Testing:
-      - Jest: jest/jest.md
-      - Selenium: selenium/selenium-webdriver.md
-  - Tooling & Environment:
+      - GSAP: gsap/gsap.md
+      - Blender: blender/blender.md
+  - Tooling:
       - Git: git/README.md
-      - LSP: lsp/lsp.md
-      - Docker: docker/docker.md
-      - Linux:
-          - Boot Process: linux/boot-process.md
-          - systemd: linux/systemd.md
-      - Terminal vs Shell:
+      - Terminal & Shell:
           - Terminal vs Shell: terminal-vs-shell/terminal-vs-shell.md
           - Shell Basics: terminal-vs-shell/shell.md
           - Shells Compared: terminal-vs-shell/shells-compared.md
           - Customizing Your Shell: terminal-vs-shell/customizing-your-shell.md
           - Prompt with Oh My Posh: terminal-vs-shell/oh-my-posh-prompt.md
+      - Docker: docker/docker.md
+      - Linux:
+          - Boot Process: linux/boot-process.md
+          - systemd: linux/systemd.md
+      - LSP: lsp/lsp.md
+      - Markdown: markdown/markdown-cheatsheet.md
+      - Testing:
+          - Jest: jest/jest.md
+          - Selenium: selenium/selenium-webdriver.md
   - Other:
-      - Blender: blender/blender.md
       - AI / Prompting: ai/prompting.md
