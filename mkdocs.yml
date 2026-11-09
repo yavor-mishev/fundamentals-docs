@@ -88,8 +88,16 @@ markdown_extensions:
   - admonition
   - tables
   - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
 
@@ -109,7 +117,9 @@ draft_docs: |
   web/nextjs/dashboard.md
 
 nav:
-  - Home: index.md
+  - Home:
+      - index.md
+      - Mind Map: mind-map.md
   - Fundamentals:
       - Algorithms: fundamentals/algorithms.md
       - Regex: fundamentals/regex.md
