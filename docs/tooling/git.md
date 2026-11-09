@@ -8,7 +8,9 @@ Here i'll list the steps needed when you want to create a repository share on gi
 
 ![Step 1: the + menu with New repository highlighted](images/git/create-new-repo-1.png)
 
-2. Add yoursefl as the owner, add a repository name and optionally a short description of what this repo is about
+2. Add yourself as the owner, add a repository name and optionally a short description of what this repo is about. Pick the visibility (Public or Private), then click **Create repository**
+
+![Step 2: the Create a new repository form](images/git/create-new-repo-2.png)
 
 3. Follow the steps provided by GitHub.
 
