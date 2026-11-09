@@ -121,7 +121,10 @@ nav:
           - systemd: linux/systemd.md
       - Terminal vs Shell:
           - Terminal vs Shell: terminal-vs-shell/terminal-vs-shell.md
-          - Shell: terminal-vs-shell/shell.md
+          - Shell Basics: terminal-vs-shell/shell.md
+          - Shells Compared: terminal-vs-shell/shells-compared.md
+          - Customizing Your Shell: terminal-vs-shell/customizing-your-shell.md
+          - Prompt with Oh My Posh: terminal-vs-shell/oh-my-posh-prompt.md
   - Other:
       - Blender: blender/blender.md
       - AI / Prompting: ai/prompting.md
