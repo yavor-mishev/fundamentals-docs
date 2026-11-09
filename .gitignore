@@ -4,6 +4,11 @@ node_modules/
 site/
 .cache/
 
+# Python virtualenv
+.venv/
+venv/
+__pycache__/
+
 # Visual Studio files
 .vs/
 *.sln
