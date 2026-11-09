@@ -35,7 +35,20 @@ markdown_extensions:
   - toc:
       permalink: true
 
-# docs/ holds only the markdown notes + their images; nothing else to exclude.
+# Empty or one-line pages: shown by `mkdocs serve`, left out of the published site.
+# Remove a line here (and add the page to nav) once it has real content.
+draft_docs: |
+  cpp/arrays.md
+  javascript/web-api.md
+  web-engines/
+  react/udemy/react-essentials/
+  react/udemy/react-essentials-deep-dive/
+  styling/css.md
+  styling/less.md
+  styling/sass/scss.md
+  cs/blazor/blazor.md
+  nodejs/restful-services.md
+  next-js/nextjs-dashboard/
 
 nav:
   - Home: index.md
@@ -52,29 +65,21 @@ nav:
           - Classes: cpp/04_classes.md
           - Static: cpp/05_static.md
           - Constructors: cpp/06_constructors.md
-          - Arrays: cpp/arrays.md
       - C#: cs/c-sharp.md
       - JavaScript:
           - Overview: javascript/javascript.md
           - Event Loop: javascript/event-loop.md
           - Prototypal Inheritance: javascript/prototypical-inheritance.md
-          - Web API: javascript/web-api.md
       - TypeScript: ts/ts.md
   - Runtimes & Engines:
       - Node.js: nodejs/nodejs.md
       - npm: nodejs/npm.md
-      - Web Engines:
-          - V8: web-engines/js-engines/v8.md
-          - WebKit: web-engines/styles-layout-engines/webkit.md
   - The Web Platform:
       - HTML: html/html.md
       - HTTP: http/http.md
       - Web Servers: web-servers/web-server.md
       - Styling:
-          - CSS: styling/css.md
-          - LESS: styling/less.md
           - SASS: styling/sass/sass.md
-          - SCSS: styling/sass/scss.md
   - Architecture Patterns:
       - MVC: asp-net-mvc/mvc.md
       - MVVM: mvvm/mvvm.md
@@ -83,18 +88,13 @@ nav:
       - ASP.NET Core: dotnet/web/asp-net-core.md
       - ASP.NET MVC: dotnet/web/asp-net-mvc.md
       - MVC vs Core: dotnet/web/mvc-vs-core.md
-      - Blazor: cs/blazor/blazor.md
       - Sitefinity: sitefinity/onboarding.md
   - JS Frameworks & Libraries:
       - React:
           - JS Refresher: react/00_js-refresher.md
           - React Essentials: react/01_react-essentials.md
           - Getting Started (Udemy): react/udemy/getting-started.md
-          - Essentials (Udemy): react/udemy/react-essentials/react-essentials.md
-          - Essentials Deep Dive (Udemy): react/udemy/react-essentials-deep-dive/react-essentials-deep-dive.md
-      - Next.js:
-          - Overview: next-js/next-js.md
-          - Dashboard Notes: next-js/nextjs-dashboard/README.md
+      - Next.js: next-js/next-js.md
       - jQuery:
           - Overview: jquery/README.md
           - Plugins: jquery/plugins.md
@@ -107,7 +107,6 @@ nav:
   - Backend & APIs:
       - APIs: api/api.md
       - Express: nodejs/express.md
-      - RESTful Services: nodejs/restful-services.md
       - Node Web Server (demo): projects/node-web-server/docs.md
   - Testing:
       - Jest: jest/jest.md
