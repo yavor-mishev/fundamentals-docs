@@ -5,275 +5,287 @@
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/ai/prompting/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/mind-map/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/algorithms/algorithms/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/web-servers/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/api/api/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/asp-net-mvc/mvc/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-mvc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/blender/blender/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/sitefinity/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/00_cpp/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-core/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/01_variables/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-core/dependency-injection/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/02_pointers/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-core/entity-framework-core/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/03_references/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-core/interview-prep/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/04_classes/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/asp-net-core/linq/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/05_static/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/mvc-vs-core/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/06_constructors/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/mvc-vs-core/controllers-packages-performance/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cpp/arrays/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/mvc-vs-core/di-pipeline-hosting/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cs/c-sharp/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/dotnet/mvc-vs-core/structure-and-configuration/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/cs/blazor/blazor/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/nodejs/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/docker/docker/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/nodejs/express/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/dotnet/dotnet/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/nodejs/node-web-server/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/dotnet/web/asp-net-core/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/backend/nodejs/npm/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/dotnet/web/asp-net-mvc/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/algorithms/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/dotnet/web/mvc-vs-core/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/apis/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/git/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/http/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/gsap/gsap/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/regex/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/html/html/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/architecture-patterns/mvc/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/http/http/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/architecture-patterns/mvvm/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/javascript/event-loop/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/architecture-patterns/mvvm/kendo-best-practices/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/javascript/javascript/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/architecture-patterns/mvvm/kendo-mvvm/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/javascript/prototypical-inheritance/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/fundamentals/architecture-patterns/mvvm/kendo-widgets/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/javascript/web-api/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/blender/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/jest/jest/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/gsap/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/jquery/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/pixi/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/jquery/plugins/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/pixi/layers/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/linux/boot-process/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/pixi/projection/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/linux/systemd/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/gamedev/pixi/spine/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/lsp/lsp/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/csharp/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/markdown/markdown-cheatsheet/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/typescript/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/mvvm/mvvm/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/next-js/next-js/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/classes/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/next-js/nextjs-dashboard/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/constructors/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/nodejs/express/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/pointers/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/nodejs/nodejs/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/references/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/nodejs/npm/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/static/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/nodejs/restful-services/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/cpp/variables/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/pixi/pixi-layers/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/pixi/pixi-projection/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/async/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/pixi/pixijs/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/data-structures/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/pixi/spine/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/event-loop/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/projects/node-web-server/docs/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/functions/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/react/00_js-refresher/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/prototypal-inheritance/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/react/01_react-essentials/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/languages/javascript/syntax-modules-errors/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/react/udemy/getting-started/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/other/ai-prompting/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/react/udemy/react-essentials/react-essentials/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/docker/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/react/udemy/react-essentials-deep-dive/react-essentials-deep-dive/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/git/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/regex/regex/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/lsp/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/selenium/selenium-webdriver/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/markdown/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/sitefinity/onboarding/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/linux/boot-process/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/styling/css/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/linux/systemd/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/styling/less/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/styling/sass/sass/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/customizing-your-shell/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/styling/sass/scss/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/oh-my-posh-prompt/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/terminal-vs-shell/customizing-your-shell/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/shell-basics/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/terminal-vs-shell/oh-my-posh-prompt/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/shells-compared/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/terminal-vs-shell/shell/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/testing/jest/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/terminal-vs-shell/shells-compared/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/tooling/testing/selenium/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/terminal-vs-shell/terminal-vs-shell/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/html/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/ts/ts/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/jquery/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/web-engines/js-engines/v8/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/jquery/plugins/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/web-engines/styles-layout-engines/webkit/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/nextjs/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
     <url>
-         <loc>https://yavor-mishev.github.io/fundamentals-docs/web-servers/web-server/</loc>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/react/js-refresher/</loc>
+         <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/react/react-essentials/</loc>
+         <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/react/udemy/getting-started/</loc>
+         <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
+         <loc>https://yavor-mishev.github.io/fundamentals-docs/web/styling/sass/</loc>
          <lastmod>2026-11-09</lastmod>
     </url>
 </urlset>

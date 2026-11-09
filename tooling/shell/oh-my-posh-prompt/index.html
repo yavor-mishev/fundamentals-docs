@@ -1,0 +1,5525 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yavor-mishev.github.io/fundamentals-docs/tooling/shell/oh-my-posh-prompt/">
+      
+      
+        <link rel="prev" href="../customizing-your-shell/">
+      
+      
+        <link rel="next" href="../../docker/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Prompt with Oh My Posh - Fundamentals Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#your-prompt-with-oh-my-posh" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Fundamentals Docs" class="md-header__button md-logo" aria-label="Fundamentals Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Fundamentals Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt with Oh My Posh
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yavor-mishev/fundamentals-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../fundamentals/algorithms/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Languages
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../web/html/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Web Frontend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../backend/nodejs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../gamedev/pixi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Game Dev
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../git/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tooling
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../other/ai-prompting/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Other
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Fundamentals Docs" class="md-nav__button md-logo" aria-label="Fundamentals Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Fundamentals Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yavor-mishev/fundamentals-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mind-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mind Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/architecture-patterns/mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../fundamentals/architecture-patterns/mvvm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVVM
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MVVM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/architecture-patterns/mvvm/kendo-mvvm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kendo UI MVVM & Bindings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/architecture-patterns/mvvm/kendo-widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kendo UI Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fundamentals/architecture-patterns/mvvm/kendo-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kendo Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Languages
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Languages
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../languages/cpp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/static/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/constructors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constructors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/csharp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C#
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../languages/javascript/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JavaScript
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions, Closures & this
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/async/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/event-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/syntax-modules-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destructuring, Modules & Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/javascript/prototypal-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prototypal Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/typescript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../web/nextjs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Frontend
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/html/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/styling/sass/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SASS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    React
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/react/js-refresher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS Refresher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/react/react-essentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/react/udemy/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started (Udemy)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../web/jquery/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    jQuery
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    jQuery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web/jquery/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../backend/nodejs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node.js
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node.js
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/nodejs/npm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    npm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/nodejs/express/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/nodejs/node-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Web Server (demo)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/web-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../backend/dotnet/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    .NET
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../backend/dotnet/asp-net-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ASP.NET Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/asp-net-core/dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/asp-net-core/linq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/asp-net-core/entity-framework-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Framework Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/asp-net-core/interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Prep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/asp-net-mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../backend/dotnet/mvc-vs-core/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVC vs Core
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MVC vs Core
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/mvc-vs-core/structure-and-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure & Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/mvc-vs-core/di-pipeline-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DI, Pipeline & Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/mvc-vs-core/controllers-packages-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controllers, Packages & Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/dotnet/sitefinity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sitefinity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Dev
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game Dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gamedev/pixi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PixiJS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PixiJS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedev/pixi/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedev/pixi/projection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedev/pixi/spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedev/gsap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GSAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedev/blender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blender
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tooling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tooling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal & Shell
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Terminal & Shell
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shells-compared/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shells Compared
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customizing-your-shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customizing Your Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt with Oh My Posh
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt with Oh My Posh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recap-terminal-shell-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recap: terminal, shell, prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-prompt-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a prompt actually is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-oh-my-posh-plugs-into-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Oh My Posh plugs into the shell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-your-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of your theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-changed-the-nodejs-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we changed: the Node.js segment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What we changed: the Node.js segment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-segment-we-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The segment we added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-theme-to-the-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying the theme to the Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-rm-has-no-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lesson: rm has no undo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-what-you-can-tinker-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference: what you can tinker with
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference: what you can tinker with">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-properties-shared-by-every-segment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment properties (shared by every segment type)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options-for-the-segments-you-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options for the segments you use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-types-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment types worth knowing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow &amp; troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/boot-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/systemd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    systemd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/jest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/selenium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selenium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other/ai-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI / Prompting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recap-terminal-shell-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recap: terminal, shell, prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-prompt-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a prompt actually is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-oh-my-posh-plugs-into-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Oh My Posh plugs into the shell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-your-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of your theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-we-changed-the-nodejs-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we changed: the Node.js segment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What we changed: the Node.js segment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-segment-we-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The segment we added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-theme-to-the-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying the theme to the Pi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lesson-rm-has-no-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lesson: rm has no undo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-what-you-can-tinker-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference: what you can tinker with
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference: what you can tinker with">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-level settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-properties-shared-by-every-segment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment properties (shared by every segment type)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options-for-the-segments-you-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options for the segments you use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment-types-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment types worth knowing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow &amp; troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="your-prompt-with-oh-my-posh">Your Prompt with Oh My Posh<a class="headerlink" href="#your-prompt-with-oh-my-posh" title="Permanent link">&para;</a></h1>
+<p>This page explains what the prompt is, how <strong>Oh My Posh</strong> draws it, how your theme is put together, and how we added a <strong>Node.js version</strong> segment that only shows up inside Node projects. The second half is a reference for the settings you can change and the values each one accepts.</p>
+<h2 id="recap-terminal-shell-prompt">Recap: terminal, shell, prompt<a class="headerlink" href="#recap-terminal-shell-prompt" title="Permanent link">&para;</a></h2>
+<p>Three different things are working together every time you type a command:</p>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+<th>Your example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Terminal</strong></td>
+<td>The window app that draws text and sends your keystrokes</td>
+<td>Terminal.app, iTerm2, VS Code's terminal</td>
+</tr>
+<tr>
+<td><strong>Shell</strong></td>
+<td>The program running <em>inside</em> the terminal that reads your command, runs it, and prints the result</td>
+<td><code>zsh</code></td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>The text the shell prints <em>before</em> each command to say "ready, type here"</td>
+<td><code>~  ❯</code></td>
+</tr>
+</tbody>
+</table>
+<p>The shell is the part you configure. The common ones are:</p>
+<table>
+<thead>
+<tr>
+<th>Shell</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sh</strong></td>
+<td>The original Unix shell (POSIX). Minimal, and the most portable choice for scripts.</td>
+</tr>
+<tr>
+<td><strong>bash</strong></td>
+<td>"Bourne Again SHell". Default on most Linux systems for years, and still the most common in scripts and servers.</td>
+</tr>
+<tr>
+<td><strong>zsh</strong></td>
+<td>Mostly bash-compatible, with better completion, globbing and themes. The <strong>macOS default</strong> since Catalina. Your Mac and your Pi both use it.</td>
+</tr>
+<tr>
+<td><strong>fish</strong></td>
+<td>Friendly out of the box (autosuggestions, colours), but <strong>not</strong> bash-compatible.</td>
+</tr>
+</tbody>
+</table>
+<p>More detail is in <a href="../">Terminal vs Shell</a> and <a href="../shells-compared/">Shells Compared</a>.</p>
+<h2 id="what-a-prompt-actually-is">What a prompt actually is<a class="headerlink" href="#what-a-prompt-actually-is" title="Permanent link">&para;</a></h2>
+<p>The prompt is just a <strong>shell variable</strong> that holds a string. Before each command, the shell expands the string and prints it.</p>
+<ul>
+<li>In <strong>zsh</strong> the variable is <code>PROMPT</code> (or <code>PS1</code>). The right-hand side is <code>RPROMPT</code>.</li>
+<li>In <strong>bash</strong> it's <code>PS1</code>.</li>
+</ul>
+<p>The string can contain escape codes that the shell fills in:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># zsh</span>
+<span class="nv">PROMPT</span><span class="o">=</span><span class="s1">'%n@%m %1~ %# '</span><span class="w">      </span><span class="c1"># → yavor@ungabunga projects %</span>
+<span class="c1"># bash</span>
+<span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h \W \$ '</span><span class="w">           </span><span class="c1"># → yavor@ungabunga projects $</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>zsh</th>
+<th>bash</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%n</code></td>
+<td><code>\u</code></td>
+<td>Username</td>
+</tr>
+<tr>
+<td><code>%m</code></td>
+<td><code>\h</code></td>
+<td>Hostname</td>
+</tr>
+<tr>
+<td><code>%~</code></td>
+<td><code>\w</code></td>
+<td>Current directory, with <code>$HOME</code> shown as <code>~</code></td>
+</tr>
+<tr>
+<td><code>%1~</code></td>
+<td><code>\W</code></td>
+<td>Only the last folder</td>
+</tr>
+<tr>
+<td><code>%#</code></td>
+<td><code>\$</code></td>
+<td><code>#</code> for root, otherwise <code>%</code> (zsh) or <code>$</code> (bash)</td>
+</tr>
+<tr>
+<td><code>%F{red}…%f</code></td>
+<td><code>\[\e[31m\]…\[\e[0m\]</code></td>
+<td>Coloured text</td>
+</tr>
+</tbody>
+</table>
+<p>Writing this by hand works fine for simple prompts. It gets painful once you want git status, icons, coloured "powerline" arrows, or a segment that only appears in some folders. A <strong>prompt engine</strong> takes care of all that for you.</p>
+<h2 id="how-oh-my-posh-plugs-into-the-shell">How Oh My Posh plugs into the shell<a class="headerlink" href="#how-oh-my-posh-plugs-into-the-shell" title="Permanent link">&para;</a></h2>
+<p><a href="https://ohmyposh.dev/">Oh My Posh</a> is a prompt engine: one binary plus a JSON <strong>theme</strong> file. It works with zsh, bash, fish, PowerShell and others, so the same theme looks the same on every machine.</p>
+<p>You enable it with one line in <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>oh-my-posh<span class="w"> </span>init<span class="w"> </span>zsh<span class="w"> </span>--config<span class="w"> </span>~/.mytheme.omp.json<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
+<p>Here's what that line does:</p>
+<ol>
+<li><code>oh-my-posh init zsh …</code> <strong>prints</strong> a block of zsh code. It doesn't change anything by itself.</li>
+<li><code>eval "$( … )"</code> <strong>runs</strong> that printed code in your current shell.</li>
+<li>The code registers a zsh hook (<code>precmd</code>) that runs before every prompt. The hook calls <code>oh-my-posh print primary</code>, which reads your theme, collects the data it needs (folder, git, exit code, …) and returns the finished string. The hook then puts that string into <code>PROMPT</code>.</li>
+</ol>
+<p>So the theme is read again for each new prompt. To see your changes, edit <code>~/.mytheme.omp.json</code> and open a new tab (or run <code>exec zsh</code>).</p>
+<blockquote>
+<p><strong>Order matters in <code>.zshrc</code>:</strong> the <code>oh-my-posh init</code> line sits <em>before</em> the zsh-autosuggestions and zsh-syntax-highlighting plugins, because syntax highlighting must be loaded last. Keep new things between the Kiro CLI pre/post blocks.</p>
+</blockquote>
+<h2 id="your-setup">Your setup<a class="headerlink" href="#your-setup" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mac</th>
+<th>Raspberry Pi (<code>ungabunga</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shell</td>
+<td>zsh</td>
+<td>zsh</td>
+</tr>
+<tr>
+<td>Oh My Posh binary</td>
+<td><code>/opt/homebrew/bin/oh-my-posh</code> (Homebrew)</td>
+<td><code>~/.local/bin/oh-my-posh</code></td>
+</tr>
+<tr>
+<td>Theme file</td>
+<td><code>~/.mytheme.omp.json</code></td>
+<td><code>~/.mytheme.omp.json</code> (a copy of the Mac one)</td>
+</tr>
+<tr>
+<td>Loaded from</td>
+<td><code>~/.zshrc</code></td>
+<td><code>~/.zshrc</code></td>
+</tr>
+<tr>
+<td>Font</td>
+<td>Needs a <a href="https://www.nerdfonts.com/">Nerd Font</a> in the terminal app, or the icons show as boxes</td>
+<td>Icons are drawn by the terminal on the <em>Mac</em>, so the Mac font is the one that matters over SSH</td>
+</tr>
+</tbody>
+</table>
+<h3 id="anatomy-of-your-theme">Anatomy of your theme<a class="headerlink" href="#anatomy-of-your-theme" title="Permanent link">&para;</a></h3>
+<p>Your prompt has two lines:</p>
+<div class="highlight"><pre><span></span><code> ┌ block 1 (left) ───────────────────────────────────────────────┐        ┌ block 2 (right) ┐
+   session ▶  path  ▶   git      ▶  node     ▶ status                         time
+     ▶  teratestn ▶ main ≡    ▶  v25.7.0  ▶  ✓                              23:09
+ ❯                                          ← block 3 (new line, left)
+</code></pre></div>
+<p>A theme is a list of <strong>blocks</strong>, and each block is a list of <strong>segments</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Block</th>
+<th>Segment</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Left</td>
+<td><code>session</code></td>
+<td>Apple logo <code>on the Mac, Raspberry Pi logo</code> when you're in over SSH (<code>{{ if .SSHSession }}</code>)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>path</code></td>
+<td>The current folder only (<code>"style": "folder"</code>)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>git</code></td>
+<td>Branch, ahead/behind arrows, changed/staged counts, stash count. The background colour changes with repo state (see <a href="#colours"><code>background_templates</code></a>)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>node</code></td>
+<td><strong>New.</strong> Node.js version, only inside Node projects</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>status</code></td>
+<td>Teal with a check mark normally; pink with the exit code when the last command failed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Right</td>
+<td><code>time</code></td>
+<td>Clock in <code>15:04</code> format</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Left, <code>newline: true</code></td>
+<td><code>text</code></td>
+<td>The <code>❯</code> where you type. It turns pink after a failed command</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-we-changed-the-nodejs-segment">What we changed: the Node.js segment<a class="headerlink" href="#what-we-changed-the-nodejs-segment" title="Permanent link">&para;</a></h2>
+<h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
+<p>Show the active Node version <strong>only when the current folder is a Node project</strong>, and keep it hidden everywhere else.</p>
+<h3 id="the-segment-we-added">The segment we added<a class="headerlink" href="#the-segment-we-added" title="Permanent link">&para;</a></h3>
+<p>It goes in block 1, right after the <code>git</code> segment:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"powerline"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"powerline_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#6ca35e"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"foreground"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ffffff"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"  {{ .Full }} "</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"display_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"files"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"fetch_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>node</code></td>
+<td>Built-in segment that runs <code>node --version</code></td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td><code>powerline</code></td>
+<td>Same arrow style as the path and git segments next to it</td>
+</tr>
+<tr>
+<td><code>powerline_symbol</code></td>
+<td><code></code></td>
+<td>The `` arrow glyph from the Nerd Font</td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td><code>#6ca35e</code></td>
+<td>Node.js green</td>
+</tr>
+<tr>
+<td><code>template</code></td>
+<td><code>"  {{ .Full }} "</code></td>
+<td>Node logo <code>` + full version, e.g.</code>25.7.0`</td>
+</tr>
+<tr>
+<td><code>options.display_mode</code></td>
+<td><code>files</code></td>
+<td><strong>The key setting.</strong> Only render when the folder contains Node files</td>
+</tr>
+<tr>
+<td><code>options.fetch_version</code></td>
+<td><code>true</code></td>
+<td>Ask for the version. Newer Oh My Posh releases fetch it automatically and ignore this key.</td>
+</tr>
+</tbody>
+</table>
+<p>With <code>display_mode: "files"</code>, the node segment looks in the current folder for any of these:</p>
+<div class="highlight"><pre><span></span><code>*.js  *.ts  package.json  .nvmrc  pnpm-workspace.yaml  .yarnrc.yml  .pnp.cjs  .pnp.js  .pnp.loader.mjs  node_modules
+</code></pre></div>
+<p>If none are found, the segment returns nothing and disappears completely, arrow included.</p>
+<h3 id="testing-it">Testing it<a class="headerlink" href="#testing-it" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Projects/teratestn
+oh-my-posh<span class="w"> </span>debug<span class="w"> </span>--config<span class="w"> </span>~/.mytheme.omp.json
+</code></pre></div>
+<p><code>oh-my-posh debug</code> renders the whole prompt and lists every segment with <code>true</code>/<code>false</code> (was it shown?) and how long it took. That's the reliable way to test a theme from a script.</p>
+<blockquote>
+<p><strong>Gotcha:</strong> <code>oh-my-posh print primary</code> run from a script did <strong>not</strong> show the node segment, even though it worked in a real terminal. Slow segments (anything that runs a command, like <code>node --version</code>) are filled in by the shell integration, so <code>print</code> on its own can skip them. Trust <code>debug</code> or a real new tab.</p>
+</blockquote>
+<h3 id="copying-the-theme-to-the-pi">Copying the theme to the Pi<a class="headerlink" href="#copying-the-theme-to-the-pi" title="Permanent link">&para;</a></h3>
+<p>The Pi's <code>.zshrc</code> loads the same filename, so copying the file over is enough:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># back up first, then copy</span>
+ssh<span class="w"> </span>yavor@ungabunga<span class="w"> </span><span class="s1">'cp ~/.mytheme.omp.json ~/.mytheme.omp.json.bak'</span>
+scp<span class="w"> </span>~/.mytheme.omp.json<span class="w"> </span>yavor@ungabunga:~/.mytheme.omp.json
+</code></pre></div>
+<p>Then reload the shell on the Pi with <code>exec zsh</code> (or log out and back in).</p>
+<p><code>scp</code> copies files over SSH, using the same <code>user@host</code> syntax as <code>ssh</code>. Paths after the <code>:</code> are on the remote machine.</p>
+<p>The Pi doesn't have Node installed yet, so the segment stays hidden there until you install it.</p>
+<h3 id="lesson-rm-has-no-undo">Lesson: <code>rm</code> has no undo<a class="headerlink" href="#lesson-rm-has-no-undo" title="Permanent link">&para;</a></h3>
+<p>While cleaning up, the real theme on the Pi got deleted instead of the <code>.bak</code>. <code>rm</code> deletes straight away, with no Trash. We fixed it by copying the Mac version over again.</p>
+<p>Habits that prevent this:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>~/.mytheme.omp.json*<span class="w">          </span><span class="c1"># look first: what exactly matches?</span>
+rm<span class="w"> </span>-i<span class="w"> </span>~/.mytheme.omp.json.bak<span class="w">    </span><span class="c1"># -i asks "remove …?" before deleting</span>
+</code></pre></div>
+<p>Type the full name (<code>….json.bak</code>) instead of relying on Tab completion. Tab stops at the shared prefix <code>.mytheme.omp.json</code>, so pressing Enter there deletes the real file.</p>
+<hr />
+<h2 id="reference-what-you-can-tinker-with">Reference: what you can tinker with<a class="headerlink" href="#reference-what-you-can-tinker-with" title="Permanent link">&para;</a></h2>
+<p>The theme is one JSON file with three levels: <strong>top-level settings</strong>, <strong>blocks</strong> and <strong>segments</strong>. The <code>$schema</code> line at the top gives you autocomplete and validation in VS Code. Hover any key to see what it does.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"final_space"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"blocks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prompt"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"alignment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"left"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"segments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w"> </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"powerline"</span><span class="p">,</span><span class="w"> </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="top-level-settings">Top-level settings<a class="headerlink" href="#top-level-settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td><code>4</code></td>
+<td>Schema version. Leave it at 4.</td>
+</tr>
+<tr>
+<td><code>final_space</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Add a space after the prompt so your cursor doesn't touch the <code>❯</code></td>
+</tr>
+<tr>
+<td><code>console_title_template</code></td>
+<td>template string</td>
+<td>The terminal tab/window title. Yours: <code>"{{ .Shell }} in {{ .Folder }}"</code></td>
+</tr>
+<tr>
+<td><code>blocks</code></td>
+<td>array</td>
+<td>The blocks, in order</td>
+</tr>
+<tr>
+<td><code>palette</code></td>
+<td><code>{ "name": "#hex" }</code></td>
+<td>Named colours. Use them as <code>"p:name"</code> anywhere a colour is accepted</td>
+</tr>
+<tr>
+<td><code>transient_prompt</code></td>
+<td>object (<code>template</code>, <code>foreground</code>, <code>background</code>, …)</td>
+<td>A short prompt (e.g. just <code>❯</code>) that <em>replaces</em> old prompts in your scrollback, so the history stays clean</td>
+</tr>
+<tr>
+<td><code>secondary_prompt</code></td>
+<td>object</td>
+<td>The prompt shown when a command continues onto another line (after <code>\</code> or an open quote)</td>
+</tr>
+<tr>
+<td><code>async</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Show the prompt immediately and let slow segments appear when they're ready</td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td><code>{ "Key": value }</code></td>
+<td>Your own constants, available in templates as <code>{{ .Var.Key }}</code></td>
+</tr>
+<tr>
+<td><code>extends</code></td>
+<td>path or URL</td>
+<td>Start from another theme and override only what you change</td>
+</tr>
+<tr>
+<td><code>enable_cursor_positioning</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Avoid a blank first line at the top of a fresh terminal</td>
+</tr>
+<tr>
+<td><code>shell_integration</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Mark command boundaries so terminals like iTerm2 can jump between commands</td>
+</tr>
+</tbody>
+</table>
+<h3 id="block-properties">Block properties<a class="headerlink" href="#block-properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>prompt</code>, <code>rprompt</code></td>
+<td>Normal prompt, or zsh's right-side prompt (<code>RPROMPT</code>, which disappears when you type over it)</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td><code>left</code>, <code>right</code></td>
+<td>Which edge of the terminal the block sticks to. Your clock is a <code>right</code> block</td>
+</tr>
+<tr>
+<td><code>newline</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Start this block on a new line. This is how your <code>❯</code> sits on line 2</td>
+</tr>
+<tr>
+<td><code>filler</code></td>
+<td>string, e.g. <code>"·"</code> or <code>"─"</code></td>
+<td>Character repeated across the gap between a left and a right block</td>
+</tr>
+<tr>
+<td><code>overflow</code></td>
+<td><code>break</code>, <code>hide</code></td>
+<td>What happens when a block doesn't fit: move to a new line, or hide it</td>
+</tr>
+<tr>
+<td><code>leading_diamond</code> / <code>trailing_diamond</code></td>
+<td>glyph</td>
+<td>Rounded cap at the very start or end of the block</td>
+</tr>
+<tr>
+<td><code>segments</code></td>
+<td>array</td>
+<td>The segments, drawn left to right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="segment-properties-shared-by-every-segment-type">Segment properties (shared by every segment type)<a class="headerlink" href="#segment-properties-shared-by-every-segment-type" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>one of ~120 types (see <a href="#segment-types-worth-knowing">below</a>)</td>
+<td>What the segment shows</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td><code>powerline</code>, <code>diamond</code>, <code>plain</code>, <code>accordion</code></td>
+<td>How it's drawn (see <a href="#styles">Styles</a>)</td>
+</tr>
+<tr>
+<td><code>foreground</code> / <code>background</code></td>
+<td>a colour (see <a href="#colours">Colours</a>)</td>
+<td>Text and fill colour</td>
+</tr>
+<tr>
+<td><code>foreground_templates</code> / <code>background_templates</code></td>
+<td>array of templates</td>
+<td>Conditional colours. The <strong>first</strong> template that produces a colour wins, otherwise the plain colour is used</td>
+</tr>
+<tr>
+<td><code>template</code></td>
+<td>Go template string</td>
+<td>The text inside the segment (see <a href="#templates">Templates</a>)</td>
+</tr>
+<tr>
+<td><code>templates</code> + <code>templates_logic</code></td>
+<td>array + <code>first_match</code> / <code>join</code></td>
+<td>Several templates: keep the first non-empty one, or join them all</td>
+</tr>
+<tr>
+<td><code>powerline_symbol</code></td>
+<td>glyph, usually <code></code> ``</td>
+<td>The arrow after a <code>powerline</code> segment</td>
+</tr>
+<tr>
+<td><code>leading_diamond</code> / <code>trailing_diamond</code></td>
+<td>glyph, e.g. <code></code> <code>/ ``</code></td>
+<td>The rounded caps of a <code>diamond</code> segment</td>
+</tr>
+<tr>
+<td><code>invert_powerline</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Flip the arrow direction (useful in right-aligned blocks)</td>
+</tr>
+<tr>
+<td><code>min_width</code> / <code>max_width</code></td>
+<td>integer (columns)</td>
+<td>Hide the segment when the terminal is narrower / wider than this</td>
+</tr>
+<tr>
+<td><code>include_folders</code> / <code>exclude_folders</code></td>
+<td>array of paths, <code>~</code> allowed, regex allowed</td>
+<td>Only show in, or never show in, these folders</td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td><code>{ "duration": "5m", "strategy": "folder" }</code></td>
+<td>Reuse the result for a while. <code>duration</code>: <code>none</code>, <code>infinite</code>, or e.g. <code>30s</code> / <code>5m</code> / <code>1h30m</code>. <code>strategy</code>: <code>folder</code>, <code>session</code>, <code>device</code></td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>name</td>
+<td>Lets other segments read this one's data: <code>{{ .Segments.Name.Field }}</code></td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td>object</td>
+<td>Settings specific to this segment type (called <code>properties</code> in older themes)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="styles">Styles<a class="headerlink" href="#styles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Look</th>
+<th>Needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>powerline</code></td>
+<td><code>▶</code> arrows joining segments into one bar</td>
+<td><code>powerline_symbol</code></td>
+</tr>
+<tr>
+<td><code>diamond</code></td>
+<td>Rounded or angled caps on each side</td>
+<td><code>leading_diamond</code>, <code>trailing_diamond</code></td>
+</tr>
+<tr>
+<td><code>plain</code></td>
+<td>Just coloured text, no background shape</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>accordion</code></td>
+<td>Like powerline, but leaves a thin arrow behind when the segment is empty</td>
+<td><code>powerline_symbol</code></td>
+</tr>
+</tbody>
+</table>
+<p>Your theme mixes them. The bar opens with a rounded <code>diamond</code> (session), continues as <code>powerline</code> (path, git, node), and ends with a rounded <code>diamond</code> (status). The <code>❯</code> is <code>plain</code>.</p>
+<h3 id="colours">Colours<a class="headerlink" href="#colours" title="Permanent link">&para;</a></h3>
+<p>Anywhere a colour is accepted, you can use:</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hex</td>
+<td><code>#ff479c</code>, <code>#fff</code></td>
+<td>Most common</td>
+</tr>
+<tr>
+<td>ANSI name</td>
+<td><code>red</code>, <code>lightBlue</code>, <code>darkGray</code>, <code>white</code></td>
+<td>Follows your terminal's colour scheme</td>
+</tr>
+<tr>
+<td>ANSI 256 index</td>
+<td><code>"208"</code></td>
+<td>0–255</td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td><code>transparent</code>, <code>parentBackground</code>, <code>parentForeground</code>, <code>background</code>, <code>foreground</code>, <code>accent</code></td>
+<td><code>transparent</code> = no fill. <code>parentBackground</code> = the previous segment's background</td>
+</tr>
+<tr>
+<td>Palette</td>
+<td><code>p:pink</code></td>
+<td>Needs <code>"palette": { "pink": "#ff479c" }</code> at the top level</td>
+</tr>
+<tr>
+<td>Shade</td>
+<td><code>darken(#ff479c, 20)</code>, <code>lighten(p:pink, 10)</code></td>
+<td>Darker or lighter by a percentage</td>
+</tr>
+<tr>
+<td>Gradient</td>
+<td><code>linear-gradient(#c386f1, #ff479c)</code></td>
+<td>Blends across the segment</td>
+</tr>
+</tbody>
+</table>
+<p>Conditional colours, as used in your git segment:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#fffb38"</span><span class="p">,</span>
+<span class="nt">"background_templates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">"{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"{{ if gt .Ahead 0 }}#B388FF{{ end }}"</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Yellow = clean, orange = uncommitted changes, red-orange = diverged from the remote, purple = ahead or behind.</p>
+<h3 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h3>
+<p>Templates use <a href="https://pkg.go.dev/text/template">Go's <code>text/template</code></a> syntax. <code>{{ … }}</code> inserts a value or runs logic.</p>
+<div class="highlight"><pre><span></span><code>{{ .Full }}                                   insert a field
+{{ if .SSHSession }}A{{ else }}B{{ end }}     if / else
+{{ if gt .Code 0 }}{{ .Code }}{{ end }}       comparisons: eq ne lt le gt ge
+{{ if and .Working.Changed .Staging.Changed }} and / or / not
+{{ trunc 25 .Branch }}                        functions (Sprig library): trunc, upper, lower, replace, …
+{{ .Env.HOME }}                               any environment variable
+</code></pre></div>
+<p><strong>Available everywhere:</strong> <code>.Shell</code>, <code>.Folder</code>, <code>.PWD</code>, <code>.UserName</code>, <code>.HostName</code>, <code>.OS</code>, <code>.Root</code> (true if root), <code>.Code</code> (last exit code), <code>.Env.NAME</code>, <code>.Var.NAME</code>.</p>
+<p><strong>Per segment</strong> (the fields your theme uses, plus useful extras):</p>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>session</code></td>
+<td><code>.UserName</code>, <code>.HostName</code>, <code>.SSHSession</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>.Path</code>, <code>.Parent</code>, <code>.Folder</code>, <code>.Writable</code></td>
+</tr>
+<tr>
+<td><code>git</code></td>
+<td><code>.HEAD</code>, <code>.Branch</code>, <code>.BranchStatus</code>, <code>.Ahead</code>, <code>.Behind</code>, <code>.Working.Changed</code>, <code>.Working.String</code>, <code>.Staging.Changed</code>, <code>.Staging.String</code>, <code>.StashCount</code>, <code>.UpstreamIcon</code>, <code>.RepoName</code></td>
+</tr>
+<tr>
+<td><code>node</code></td>
+<td><code>.Full</code> (<code>25.7.0</code>), <code>.Major</code>, <code>.Minor</code>, <code>.Patch</code>, <code>.PackageManagerIcon</code>, <code>.PackageManagerName</code>, <code>.Expected</code> / <code>.Mismatch</code> (compared with <code>.nvmrc</code>)</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>.Code</code>, <code>.Error</code></td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td><code>.CurrentDate</code> (used as <code>{{ .CurrentDate \| date .Format }}</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Icons</strong> are Nerd Font code points written as <code>\uXXXX</code>. Search for icons at the <a href="https://www.nerdfonts.com/cheat-sheet">Nerd Fonts cheat sheet</a> and copy the hex code.</p>
+<h3 id="options-for-the-segments-you-use">Options for the segments you use<a class="headerlink" href="#options-for-the-segments-you-use" title="Permanent link">&para;</a></h3>
+<p><strong><code>node</code></strong> (and every language segment: python, go, rust, java, …)</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Default</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>display_mode</code></td>
+<td><code>always</code>, <code>files</code>, <code>environment</code>, <code>context</code></td>
+<td><code>context</code></td>
+<td><code>files</code> = only when matching files are present. <code>always</code> = everywhere. <code>environment</code> = only in an active virtual environment (Python). <code>context</code> = files <em>or</em> environment</td>
+</tr>
+<tr>
+<td><code>home_enabled</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Also show it in <code>~</code></td>
+</tr>
+<tr>
+<td><code>extensions</code></td>
+<td>array of globs</td>
+<td>see above</td>
+<td>Which files count as "a Node project"</td>
+</tr>
+<tr>
+<td><code>fetch_package_manager</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td><code>false</code></td>
+<td>Fill <code>.PackageManagerIcon</code> with the npm/yarn/pnpm/bun icon, based on the lockfile</td>
+</tr>
+<tr>
+<td><code>npm_icon</code>, <code>yarn_icon</code>, <code>pnpm_icon</code>, <code>bun_icon</code></td>
+<td>glyph</td>
+<td>Nerd Font logos</td>
+<td>Override those icons</td>
+</tr>
+<tr>
+<td><code>missing_command_text</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Text shown when <code>node</code> isn't installed</td>
+</tr>
+<tr>
+<td><code>cache_duration</code></td>
+<td><code>none</code>, <code>5m</code>, <code>1h</code>, …</td>
+<td>—</td>
+<td>How long to remember the version</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>path</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>style</code></td>
+<td><code>folder</code>, <code>full</code>, <code>short</code>, <code>agnoster</code>, <code>agnoster_full</code>, <code>agnoster_short</code>, <code>agnoster_left</code>, <code>letter</code>, <code>unique</code>, <code>mixed</code>, <code>fish</code>, <code>powerlevel</code></td>
+<td>How much of the path to show. <strong>Yours:</strong> <code>folder</code> (just <code>teratestn</code>). <code>full</code> = <code>~/Projects/teratestn</code>. <code>fish</code> = <code>~/P/teratestn</code>. <code>letter</code> = <code>~/P/t</code></td>
+</tr>
+<tr>
+<td><code>home_icon</code></td>
+<td>string</td>
+<td>What to show for <code>$HOME</code>. Yours: <code>~</code></td>
+</tr>
+<tr>
+<td><code>folder_separator_icon</code></td>
+<td>string</td>
+<td>Separator between folders. Yours: ``</td>
+</tr>
+<tr>
+<td><code>max_depth</code></td>
+<td>integer</td>
+<td>Folder count before <code>agnoster_short</code> starts shortening</td>
+</tr>
+<tr>
+<td><code>mapped_locations</code></td>
+<td><code>{ "~/Projects": "" }</code></td>
+<td>Replace known paths with an icon or nickname</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>git</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>branch_template</code></td>
+<td>template</td>
+<td>How the branch name is shown. Yours: <code>{{ trunc 25 .Branch }}</code> cuts long names to 25 characters</td>
+</tr>
+<tr>
+<td><code>branch_icon</code></td>
+<td>glyph</td>
+<td>Icon before the branch (default ``)</td>
+</tr>
+<tr>
+<td><code>branch_identical_icon</code>, <code>branch_ahead_icon</code>, <code>branch_behind_icon</code>, <code>branch_gone_icon</code></td>
+<td>glyph</td>
+<td><code>≡</code>, <code>↑</code>, <code>↓</code>, <code>≢</code> by default</td>
+</tr>
+<tr>
+<td><code>mapped_branches</code></td>
+<td><code>{ "feature/*": "🚀 " }</code></td>
+<td>Replace branch prefixes with something shorter</td>
+</tr>
+<tr>
+<td><code>status_formats</code></td>
+<td><code>{ "Added": "+%d" }</code></td>
+<td>How each kind of change is counted in <code>.Working.String</code></td>
+</tr>
+<tr>
+<td><code>ignore_status</code></td>
+<td>array of paths</td>
+<td>Skip the (slow) status check in huge repos</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>status</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>always_enabled</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Show the segment on success too. Yours: <code>true</code>, so it's always there and changes colour</td>
+</tr>
+<tr>
+<td><code>status_template</code></td>
+<td>template</td>
+<td>How the code is formatted</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>time</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time_format</code></td>
+<td>Go time layout</td>
+<td>Go formats time by example, based on the reference date <strong>Mon Jan 2 15:04:05 MST 2006</strong>. Yours is <code>15:04</code> → <code>23:09</code>. Other examples: <code>15:04:05</code>, <code>3:04 PM</code>, <code>Mon 02 Jan</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="segment-types-worth-knowing">Segment types worth knowing<a class="headerlink" href="#segment-types-worth-knowing" title="Permanent link">&para;</a></h3>
+<p>There are about 120. These are the ones you're most likely to want:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Languages / runtimes</td>
+<td><code>node</code>, <code>bun</code>, <code>deno</code>, <code>python</code>, <code>go</code>, <code>rust</code>, <code>java</code>, <code>dotnet</code>, <code>php</code>, <code>ruby</code>, <code>swift</code>, <code>lua</code></td>
+</tr>
+<tr>
+<td>Package managers / tools</td>
+<td><code>npm</code>, <code>pnpm</code>, <code>yarn</code>, <code>docker</code>, <code>kubectl</code>, <code>terraform</code>, <code>aws</code>, <code>az</code>, <code>gcp</code></td>
+</tr>
+<tr>
+<td>Shell &amp; system</td>
+<td><code>executiontime</code> (how long the last command took), <code>os</code>, <code>shell</code>, <code>root</code>, <code>battery</code>, <code>sysinfo</code> (CPU/RAM), <code>upgrade</code></td>
+</tr>
+<tr>
+<td>Version control</td>
+<td><code>git</code>, <code>jujutsu</code>, <code>mercurial</code>, <code>svn</code></td>
+</tr>
+<tr>
+<td>Misc</td>
+<td><code>project</code> (name and version from <code>package.json</code>), <code>spotify</code>, <code>text</code>, <code>claude</code></td>
+</tr>
+</tbody>
+</table>
+<p>Full list with options: <a href="https://ohmyposh.dev/docs/segments">ohmyposh.dev/docs/segments</a>.</p>
+<h2 id="recipes">Recipes<a class="headerlink" href="#recipes" title="Permanent link">&para;</a></h2>
+<p>Copy these into <code>segments</code> arrays to try them.</p>
+<p><strong>Show how long the last command took</strong> (only if it took more than 2 s):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"executiontime"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"powerline"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"powerline_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ffd166"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"foreground"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#193549"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"  {{ .FormattedMs }} "</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="nt">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin"</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Add the package manager icon to the node segment:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"  {{ .Full }} {{ .PackageManagerIcon }} "</span><span class="p">,</span>
+<span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"display_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"files"</span><span class="p">,</span><span class="w"> </span><span class="nt">"fetch_package_manager"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Warn when the Node version doesn't match <code>.nvmrc</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">"background_templates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{ if .Mismatch }}#e91e63{{ end }}"</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Collapse old prompts in scrollback to just <code>❯</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">"transient_prompt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"foreground"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#00897b"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"foreground_templates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{ if gt .Code 0 }}#e91e63{{ end }}"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"❯ "</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Name your colours once</strong> (then change the whole theme from one place):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"palette"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"teal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#00897b"</span><span class="p">,</span><span class="w"> </span><span class="nt">"pink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#e91e63"</span><span class="w"> </span><span class="p">},</span>
+<span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span>
+<span class="nt">"background"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p:teal"</span>
+</code></pre></div>
+<h2 id="workflow-troubleshooting">Workflow &amp; troubleshooting<a class="headerlink" href="#workflow-troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Want to…</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Try a change</td>
+<td>Edit <code>~/.mytheme.omp.json</code>, then open a new tab or run <code>exec zsh</code></td>
+</tr>
+<tr>
+<td>See why a segment is missing</td>
+<td><code>oh-my-posh debug --config ~/.mytheme.omp.json</code>. Each segment is listed as <code>true</code>/<code>false</code> with timings, and errors are printed</td>
+</tr>
+<tr>
+<td>Catch JSON mistakes</td>
+<td>Open the file in VS Code. The <code>$schema</code> line underlines invalid keys and values</td>
+</tr>
+<tr>
+<td>Browse ready-made themes</td>
+<td><code>ls $(brew --prefix oh-my-posh)/themes</code>, or the gallery at <a href="https://ohmyposh.dev/docs/themes">ohmyposh.dev/docs/themes</a></td>
+</tr>
+<tr>
+<td>Sync to the Pi</td>
+<td><code>scp ~/.mytheme.omp.json yavor@ungabunga:~/.mytheme.omp.json</code>, then <code>exec zsh</code> on the Pi</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td>Keep a copy before big edits: <code>cp ~/.mytheme.omp.json ~/.mytheme.omp.json.bak</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boxes or <code>?</code> instead of icons</td>
+<td>Terminal font isn't a Nerd Font. Change it in the terminal app's settings (VS Code: <code>terminal.integrated.fontFamily</code>)</td>
+</tr>
+<tr>
+<td>Segment never appears</td>
+<td>Check <code>display_mode</code>, <code>include_folders</code>/<code>exclude_folders</code>, and whether the tool (e.g. <code>node</code>) is installed and on <code>$PATH</code></td>
+</tr>
+<tr>
+<td>Prompt is slow</td>
+<td>Run <code>debug</code> to find the slow segment, then add a <code>cache</code> or turn on <code>async</code></td>
+</tr>
+<tr>
+<td>Prompt disappeared completely</td>
+<td>Usually a JSON syntax error (a trailing comma, a missing quote). <code>debug</code> reports it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ohmyposh.dev/docs">Oh My Posh docs</a> · <a href="https://ohmyposh.dev/docs/configuration/general">configuration</a> · <a href="https://ohmyposh.dev/docs/segments">segments</a> · <a href="https://ohmyposh.dev/docs/configuration/templates">templates</a></li>
+<li><a href="https://www.nerdfonts.com/cheat-sheet">Nerd Fonts cheat sheet</a></li>
+<li><a href="https://pkg.go.dev/time#pkg-constants">Go time format reference</a></li>
+<li><a href="https://masterminds.github.io/sprig/">Sprig template functions</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 9, 2026 19:09:40 UTC">November 9, 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
