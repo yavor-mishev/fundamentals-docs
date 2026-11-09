@@ -1,5 +1,77 @@
 # Prototypal Inheritance
 
+## Quick overview
+
+Every JavaScript object has a prototype. The prototype is also an object that the current object inherits from.
+
+### Prototype Chain
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log(`Hello, I'm ${this.name}`);
+};
+
+const john = new Person('John');
+john.greet(); // "Hello, I'm John"
+
+// Prototype chain
+console.log(john.__proto__ === Person.prototype);           // true
+console.log(Person.prototype.__proto__ === Object.prototype); // true
+console.log(Object.prototype.__proto__);                      // null
+```
+
+### Object.create()
+
+```javascript
+const animal = {
+    makeSound: function() {
+        console.log('Some sound');
+    }
+};
+
+const dog = Object.create(animal);
+dog.bark = function() {
+    console.log('Woof!');
+};
+
+dog.bark();       // "Woof!"
+dog.makeSound();  // "Some sound" (inherited)
+```
+
+### ES6 Classes (Syntactic Sugar over Prototypes)
+
+```javascript
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    
+    speak() {
+        console.log(`${this.name} makes a sound`);
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, breed) {
+        super(name);
+        this.breed = breed;
+    }
+    
+    speak() {
+        console.log(`${this.name} barks`);
+    }
+}
+
+const dog = new Dog('Rex', 'Labrador');
+dog.speak(); // "Rex barks"
+```
+
+---
+
 ## Objects in JS
 
 In JavaScript, everything is an object. This includes not only the objects you create, but also functions, arrays, and even primitive types like strings and numbers. When you create a variable, you're actually creating a reference to an object in memory. For example:

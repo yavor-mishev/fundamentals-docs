@@ -32,7 +32,7 @@ plugins:
         http/http.md: fundamentals/http.md
         api/api.md: fundamentals/apis.md
         asp-net-mvc/mvc.md: fundamentals/architecture-patterns/mvc.md
-        mvvm/mvvm.md: fundamentals/architecture-patterns/mvvm.md
+        mvvm/mvvm.md: fundamentals/architecture-patterns/mvvm/index.md
         cpp/00_cpp.md: languages/cpp/index.md
         cpp/01_variables.md: languages/cpp/variables.md
         cpp/02_pointers.md: languages/cpp/pointers.md
@@ -59,9 +59,9 @@ plugins:
         projects/node-web-server/docs.md: backend/nodejs/node-web-server.md
         web-servers/web-server.md: backend/web-servers.md
         dotnet/dotnet.md: backend/dotnet/index.md
-        dotnet/web/asp-net-core.md: backend/dotnet/asp-net-core.md
+        dotnet/web/asp-net-core.md: backend/dotnet/asp-net-core/index.md
         dotnet/web/asp-net-mvc.md: backend/dotnet/asp-net-mvc.md
-        dotnet/web/mvc-vs-core.md: backend/dotnet/mvc-vs-core.md
+        dotnet/web/mvc-vs-core.md: backend/dotnet/mvc-vs-core/index.md
         sitefinity/onboarding.md: backend/dotnet/sitefinity.md
         pixi/pixijs.md: gamedev/pixi/index.md
         pixi/pixi-layers.md: gamedev/pixi/layers.md
@@ -117,7 +117,11 @@ nav:
       - APIs: fundamentals/apis.md
       - Architecture Patterns:
           - MVC: fundamentals/architecture-patterns/mvc.md
-          - MVVM: fundamentals/architecture-patterns/mvvm.md
+          - MVVM:
+              - fundamentals/architecture-patterns/mvvm/index.md
+              - Kendo UI MVVM & Bindings: fundamentals/architecture-patterns/mvvm/kendo-mvvm.md
+              - Kendo UI Widgets: fundamentals/architecture-patterns/mvvm/kendo-widgets.md
+              - Kendo Best Practices: fundamentals/architecture-patterns/mvvm/kendo-best-practices.md
   - Languages:
       - C++:
           - Overview: languages/cpp/index.md
@@ -130,7 +134,11 @@ nav:
       - C#: languages/csharp.md
       - JavaScript:
           - Overview: languages/javascript/index.md
+          - Data Structures: languages/javascript/data-structures.md
+          - Functions, Closures & this: languages/javascript/functions.md
+          - Async JavaScript: languages/javascript/async.md
           - Event Loop: languages/javascript/event-loop.md
+          - Destructuring, Modules & Errors: languages/javascript/syntax-modules-errors.md
           - Prototypal Inheritance: languages/javascript/prototypal-inheritance.md
       - TypeScript: languages/typescript.md
   - Web Frontend:
@@ -153,9 +161,18 @@ nav:
       - Web Servers: backend/web-servers.md
       - .NET:
           - Overview: backend/dotnet/index.md
-          - ASP.NET Core: backend/dotnet/asp-net-core.md
+          - ASP.NET Core:
+              - backend/dotnet/asp-net-core/index.md
+              - Dependency Injection: backend/dotnet/asp-net-core/dependency-injection.md
+              - LINQ: backend/dotnet/asp-net-core/linq.md
+              - Entity Framework Core: backend/dotnet/asp-net-core/entity-framework-core.md
+              - Interview Prep: backend/dotnet/asp-net-core/interview-prep.md
           - ASP.NET MVC: backend/dotnet/asp-net-mvc.md
-          - MVC vs Core: backend/dotnet/mvc-vs-core.md
+          - MVC vs Core:
+              - backend/dotnet/mvc-vs-core/index.md
+              - Structure & Configuration: backend/dotnet/mvc-vs-core/structure-and-configuration.md
+              - DI, Pipeline & Hosting: backend/dotnet/mvc-vs-core/di-pipeline-hosting.md
+              - Controllers, Packages & Performance: backend/dotnet/mvc-vs-core/controllers-packages-performance.md
           - Sitefinity: backend/dotnet/sitefinity.md
   - Game Dev:
       - PixiJS:
