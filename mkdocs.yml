@@ -209,6 +209,8 @@ nav:
           - Customizing Your Shell: tooling/shell/customizing-your-shell.md
           - Prompt with Oh My Posh: tooling/shell/oh-my-posh-prompt.md
       - Docker: tooling/docker.md
+      - Homepage Dashboard: tooling/homepage.md
+      - Home Network (Pi-hole & Tailscale): tooling/home-network.md
       - Linux:
           - Boot Process: tooling/linux/boot-process.md
           - systemd: tooling/linux/systemd.md
