@@ -14,7 +14,7 @@
         <link rel="prev" href="../shell/oh-my-posh-prompt/">
       
       
-        <link rel="next" href="../linux/boot-process/">
+        <link rel="next" href="../homepage/">
       
       
         
@@ -74,6 +74,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -3113,6 +3118,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3400,6 +3409,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -3418,6 +3447,197 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vms-vs-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMs vs containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The building blocks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-docker-is-put-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Docker is put together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run-vs-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docker run vs docker compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-docker-compose-up-d-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What docker compose up -d does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose-file-most-used-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compose file: most used properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compose file: most used properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restart-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restart values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-jellyfin-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Jellyfin stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homepage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Network (Pi-hole & Tailscale)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3452,10 +3672,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="">
             
   
   
@@ -3473,8 +3693,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3633,10 +3853,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="">
             
   
   
@@ -3654,8 +3874,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3844,6 +4064,132 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vms-vs-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VMs vs containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The building blocks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-docker-is-put-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Docker is put together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run-vs-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        docker run vs docker compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-docker-compose-up-d-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What docker compose up -d does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose-file-most-used-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compose file: most used properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compose file: most used properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restart-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restart values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-jellyfin-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Jellyfin stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3863,31 +4209,423 @@
   
 
 
-  <h1>Docker</h1>
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<p>Docker runs apps in <strong>containers</strong>: isolated, self-contained packages that hold the app plus everything it needs. You can run Jellyfin, a database or a web app without installing any of it on the machine itself.</p>
+<h2 id="vms-vs-containers">VMs vs containers<a class="headerlink" href="#vms-vs-containers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Virtualization</strong>: carve out part of the host's hardware to run a completely separate machine (a VM) with <strong>its own OS</strong>. A <strong>hypervisor</strong> (VMware, VirtualBox) manages the VMs. Heavy, and slow to start.</li>
+<li><strong>Containerization</strong>: run a normal process on the host's kernel, but walled off. It sees only its own files, network and processes. Nothing is emulated, so it starts in about a second. Setting this up by hand is hard, and Docker does it for you.</li>
+</ul>
+<h2 id="the-building-blocks">The building blocks<a class="headerlink" href="#the-building-blocks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dockerfile</strong></td>
+<td>Text file with instructions for <strong>building</strong> an image</td>
+</tr>
+<tr>
+<td><strong>Image</strong></td>
+<td>The packaged app: a frozen minimal Linux filesystem + app + dependencies + a "run this on start" command. The blueprint</td>
+</tr>
+<tr>
+<td><strong>Container</strong></td>
+<td>A running instance of an image. Disposable: delete it and make a new one any time</td>
+</tr>
+<tr>
+<td><strong>Registry</strong></td>
+<td>Where images are published and downloaded from. <strong>Docker Hub</strong> is like GitHub for images (also <code>ghcr.io</code>)</td>
+</tr>
+<tr>
+<td><strong>Volume</strong></td>
+<td>A folder that lives outside the container, so data survives when the container is deleted</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">debian:bookworm-slim</span><span class="w">          </span><span class="c"># start from a tiny Debian</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ffmpeg<span class="w">      </span>#<span class="w"> </span>add<span class="w"> </span>dependencies
+<span class="k">COPY</span><span class="w"> </span>./jellyfin<span class="w"> </span>/jellyfin<span class="w">          </span>#<span class="w"> </span>add<span class="w"> </span>the<span class="w"> </span>app<span class="w"> </span>itself
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8096                        # it listens on port 8096</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"/jellyfin/jellyfin"</span><span class="p">]</span><span class="w">         </span>#<span class="w"> </span>what<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>on<span class="w"> </span>start
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Containers are disposable, volumes are permanent</p>
+<p>To update an app, delete the old container and create a new one from the newer image. It plugs into the same volume folders and carries on as if nothing happened. Back up the volumes and the compose file, not the containers.</p>
+</div>
+<h2 id="how-docker-is-put-together">How Docker is put together<a class="headerlink" href="#how-docker-is-put-together" title="Permanent link">&para;</a></h2>
+<p>"Docker" is really several pieces:</p>
+<pre class="mermaid"><code>flowchart TD
+    A["You: docker run … / docker compose up"] --&gt; B["docker (CLI)&lt;br/&gt;a remote control, does no real work"]
+    B -- "API request" --&gt; C["dockerd (the engine)&lt;br/&gt;background service: pulls images, creates&lt;br/&gt;networks and volumes, restarts containers"]
+    C --&gt; D["containerd + runc&lt;br/&gt;ask the Linux kernel to start the walled-off process"]</code></pre>
+<p>Because <code>dockerd</code> runs as a system service, containers keep running after you log out and come back after a reboot.</p>
+<h2 id="docker-run-vs-docker-compose"><code>docker run</code> vs <code>docker compose</code><a class="headerlink" href="#docker-run-vs-docker-compose" title="Permanent link">&para;</a></h2>
+<p>Both are subcommands of the same <code>docker</code> CLI and both send requests to the same engine.</p>
+<ul>
+<li><strong><code>docker run</code></strong> is the manual way: start <strong>one</strong> container, with all settings typed as flags. Nothing is saved.</li>
+<li><strong><code>docker compose</code></strong> reads an instruction file (<code>compose.yaml</code> / <code>docker-compose.yml</code>) and starts <strong>one or many</strong> containers from it.</li>
+</ul>
+<p>The same Jellyfin setup, written both ways:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">docker run</label><label for="__tabbed_1_2">docker-compose.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>jellyfin<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">8096</span>:8096<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/mnt/data/jellyfin/config:/config<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/mnt/data/media:/media:ro<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Europe/Sofia<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>jellyfin/jellyfin:latest
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jellyfin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin/jellyfin:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8096:8096"</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data/jellyfin/config:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data/media:/media:ro</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Europe/Sofia</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>docker run</code></th>
+<th><code>docker compose</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings live in</td>
+<td>flags you type each time</td>
+<td>a saved YAML file</td>
+</tr>
+<tr>
+<td>Works on</td>
+<td>one container</td>
+<td>every service in the file at once</td>
+</tr>
+<tr>
+<td>Network between services</td>
+<td>you create it by hand</td>
+<td>made automatically</td>
+</tr>
+<tr>
+<td>To change something</td>
+<td>stop, remove, retype the command</td>
+<td>edit the file, run <code>up -d</code> again</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><code>docker-compose</code> with a hyphen</p>
+<p>Compose used to be a separate Python program called <code>docker-compose</code>. It's now a plugin of the CLI, typed <code>docker compose</code> with a space. Same YAML, same purpose. Old guides still show the hyphen.</p>
+</div>
+<p>Use Compose even for a single container: the settings are saved, can be backed up, and changing something means editing one line. Keep <code>docker run</code> for quick tests like <code>docker run --rm hello-world</code> (<code>--rm</code> deletes the container when it exits).</p>
+<h2 id="what-docker-compose-up-d-does">What <code>docker compose up -d</code> does<a class="headerlink" href="#what-docker-compose-up-d-does" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Reads</strong> the compose file in the current folder.</li>
+<li><strong>Pulls</strong> the images that aren't on the machine yet (downloaded once).</li>
+<li>Creates a private <strong>network</strong>, so services in the file reach each other by service name (e.g. <code>http://jellyfin:8096</code>, <code>db:5432</code>).</li>
+<li><strong>Creates</strong> each container from its image, with your ports, volumes and environment.</li>
+<li><strong>Starts</strong> the image's <code>CMD</code> inside the walls, and forwards host ports into the container.</li>
+</ol>
+<p><code>-d</code> (detached) means "run in the background."</p>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Compose (run inside the stack's folder)</label><label for="__tabbed_2_2">Plain docker (works on any container)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker compose up -d</code></td>
+<td>Create/start everything in the file. Re-run after editing: only changed services are recreated</td>
+</tr>
+<tr>
+<td><code>docker compose down</code></td>
+<td>Stop and remove the containers and network. <strong>Volume data stays</strong></td>
+</tr>
+<tr>
+<td><code>docker compose pull &amp;&amp; docker compose up -d</code></td>
+<td>Update to the newest images</td>
+</tr>
+<tr>
+<td><code>docker compose logs -f [service]</code></td>
+<td>Follow the app output (<code>Ctrl+C</code> to exit)</td>
+</tr>
+<tr>
+<td><code>docker compose ps</code></td>
+<td>List this stack's containers</td>
+</tr>
+<tr>
+<td><code>docker compose restart [service]</code></td>
+<td>Restart without recreating</td>
+</tr>
+<tr>
+<td><code>docker compose stop</code> / <code>start</code></td>
+<td>Stop/start without removing</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker ps</code> (<code>-a</code> for stopped too)</td>
+<td>List containers</td>
+</tr>
+<tr>
+<td><code>docker logs -f jellyfin</code></td>
+<td>Follow a container's output</td>
+</tr>
+<tr>
+<td><code>docker exec -it jellyfin bash</code></td>
+<td>Open a shell inside a running container</td>
+</tr>
+<tr>
+<td><code>docker stop</code> / <code>start</code> / <code>rm jellyfin</code></td>
+<td>Stop / start / delete a container</td>
+</tr>
+<tr>
+<td><code>docker pull jellyfin/jellyfin</code></td>
+<td>Just download an image</td>
+</tr>
+<tr>
+<td><code>docker images</code></td>
+<td>List downloaded images</td>
+</tr>
+<tr>
+<td><code>docker image prune</code></td>
+<td>Delete unused images to free disk space</td>
+</tr>
+<tr>
+<td><code>docker build -t myapp .</code></td>
+<td>Build an image from the Dockerfile in this folder</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="compose-file-most-used-properties">Compose file: most used properties<a class="headerlink" href="#compose-file-most-used-properties" title="Permanent link">&para;</a></h2>
+<p>Each name under <code>services:</code> is one container. That name is also its <strong>hostname</strong> on the stack's network.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Example</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><code>jellyfin/jellyfin:latest</code></td>
+<td>Which image to run: <code>account/name:tag</code>. <code>latest</code> = newest when pulled; pin a version (<code>:10.11.0</code>) for controlled updates</td>
+</tr>
+<tr>
+<td><code>build</code></td>
+<td><code>.</code></td>
+<td>Build the image from a Dockerfile instead of downloading one</td>
+</tr>
+<tr>
+<td><code>container_name</code></td>
+<td><code>jellyfin</code></td>
+<td>Name shown in <code>docker ps</code> (otherwise auto-generated, e.g. <code>jellyfin-jellyfin-1</code>)</td>
+</tr>
+<tr>
+<td><code>ports</code></td>
+<td><code>"8096:8096"</code></td>
+<td><code>HOST:CONTAINER</code>. Only the left number is yours to change. Add <code>/udp</code> for UDP (default is TCP)</td>
+</tr>
+<tr>
+<td><code>volumes</code></td>
+<td><code>./config:/config</code></td>
+<td><code>HOST_FOLDER:CONTAINER_FOLDER</code>. <code>./</code> = next to the compose file. Add <code>:ro</code> for read-only</td>
+</tr>
+<tr>
+<td><code>environment</code></td>
+<td><code>TZ=Europe/Sofia</code></td>
+<td>Settings passed to the app. Which ones exist depends on the app's docs</td>
+</tr>
+<tr>
+<td><code>env_file</code></td>
+<td><code>tailscale.env</code></td>
+<td>Same, but read from a file. Keeps secrets out of the compose file</td>
+</tr>
+<tr>
+<td><code>restart</code></td>
+<td><code>unless-stopped</code></td>
+<td>What to do after a crash or reboot (table below)</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td><code>1000:1000</code></td>
+<td><code>UID:GID</code> to run as, so files in your folders are owned by you, not root</td>
+</tr>
+<tr>
+<td><code>depends_on</code></td>
+<td><code>[db]</code></td>
+<td>Start these services first (e.g. the database before the app)</td>
+</tr>
+<tr>
+<td><code>networks</code></td>
+<td><code>[backend]</code></td>
+<td>Which networks the container joins (default: the stack's own network)</td>
+</tr>
+<tr>
+<td><code>network_mode</code></td>
+<td><code>service:tailscale</code></td>
+<td>Share another container's network instead of having its own</td>
+</tr>
+<tr>
+<td><code>devices</code></td>
+<td><code>/dev/net/tun:/dev/net/tun</code></td>
+<td>Pass hardware through (GPU, USB, tunnel device)</td>
+</tr>
+<tr>
+<td><code>cap_add</code></td>
+<td><code>[net_admin]</code></td>
+<td>Grant extra Linux permissions. Only for images you trust</td>
+</tr>
+<tr>
+<td><code>healthcheck</code></td>
+<td><code>test: ["CMD", "curl", "-f", "http://localhost"]</code></td>
+<td>Command Docker runs to check the app is actually healthy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="restart-values"><code>restart</code> values<a class="headerlink" href="#restart-values" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>no</code></td>
+<td>Never restart (default)</td>
+</tr>
+<tr>
+<td><code>always</code></td>
+<td>Always restart, even if you stopped it manually (comes back after reboot)</td>
+</tr>
+<tr>
+<td><code>unless-stopped</code></td>
+<td>Like <code>always</code>, but stays stopped if you stopped it yourself. <strong>The usual choice</strong></td>
+</tr>
+<tr>
+<td><code>on-failure</code></td>
+<td>Restart only if it exits with an error</td>
+</tr>
+</tbody>
+</table>
+<h3 id="value-formats">Value formats<a class="headerlink" href="#value-formats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8096:8096</code></td>
+<td>host port → container port (TCP)</td>
+</tr>
+<tr>
+<td><code>7359:7359/udp</code></td>
+<td>same, UDP</td>
+</tr>
+<tr>
+<td><code>./config:/config</code></td>
+<td>folder next to the compose file → <code>/config</code> inside</td>
+</tr>
+<tr>
+<td><code>/mnt/data/media:/media:ro</code></td>
+<td>absolute host path, read-only inside</td>
+</tr>
+<tr>
+<td><code>[a, b]</code></td>
+<td>short YAML list, same as <code>- a</code> and <code>- b</code> on separate lines</td>
+</tr>
+<tr>
+<td><code># ...</code></td>
+<td>comment, ignored</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-jellyfin-stack">Example: Jellyfin stack<a class="headerlink" href="#example-jellyfin-stack" title="Permanent link">&para;</a></h2>
+<p>A real stack from my Raspberry Pi. It runs two containers: Jellyfin, and a Tailscale "sidecar" that gives Jellyfin its own HTTPS address on the tailnet.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jellyfin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin/jellyfin:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000:1000</span><span class="w">                     </span><span class="c1"># run as me, so config files are mine</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8096:8096</span><span class="w">                       </span><span class="c1"># web UI + apps</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7359:7359/udp</span><span class="w">                   </span><span class="c1"># lets apps on the LAN discover the server</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=Europe/Sofia</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JELLYFIN_PublishedServerUrl=http://ungabunga:8096</span><span class="w">   </span><span class="c1"># address given to discovering apps</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/config</span><span class="w">                </span><span class="c1"># users, watch history, library DB: back this up</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./cache:/cache</span><span class="w">                  </span><span class="c1"># thumbnails, safe to delete</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data/media/movies:/media/movies:ro</span><span class="w">   </span><span class="c1"># media read-only: Jellyfin can't change it</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data/media/shows:/media/shows:ro</span>
 
-<p>Docker</p>
+<span class="w">  </span><span class="nt">tailscale</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tailscale/tailscale:stable</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jellyfin-tailscale</span>
+<span class="w">    </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tailscale.env</span><span class="w">             </span><span class="c1"># TS_AUTHKEY, only needed on first start</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TS_HOSTNAME=jellyfin</span><span class="w">            </span><span class="c1"># → jellyfin.&lt;tailnet&gt;.ts.net</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TS_STATE_DIR=/var/lib/tailscale</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TS_SERVE_CONFIG=/config/serve.json</span><span class="w">   </span><span class="c1"># "proxy HTTPS :443 → http://jellyfin:8096"</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./tailscale/state:/var/lib/tailscale</span><span class="w">  </span><span class="c1"># keeps it logged in across restarts</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./tailscale/config:/config:ro</span>
+<span class="w">    </span><span class="nt">devices</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dev/net/tun:/dev/net/tun</span><span class="w">       </span><span class="c1"># needs the tunnel device for the VPN</span>
+<span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">net_admin</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sys_module</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div>
+<p>How requests reach Jellyfin:</p>
 <ul>
-<li>used in CD/CI, GH Actions</li>
-<li>virtualization: take small parts of the host's hardware to run a completly separate machine (VM) which has its own OS</li>
-<li>hypervisor: the thing that controlls VM's. VMWare, VirtualBox</li>
-<li>containerization: instruct certain processes to run in isolation without touching anything outside of the container. setting up something like this manually is pretty hard. this is where Docker comes in.</li>
-<li>Docker: set up containers</li>
-<li>docker file: the text file that acts as instruction s oh how to build a docker image</li>
-<li>docker image: the blueprint for a docker container. built using a docker file</li>
-<li>docker container: the running instance of a docker image</li>
-<li>
-<p>docker hub: like github but for docker images. public and private repos</p>
-</li>
-<li>
-<p>in a project folder:</p>
-<ul>
-<li>create a docker file</li>
-<li>docker build -t <image-name> .</li>
-<li>docker run -d -p 8080:80 <image-name></li>
-<li>go to localhost:8080</li>
+<li><strong>At home:</strong> TV app → <code>ungabunga:8096</code> → <code>ports</code> → Jellyfin.</li>
+<li><strong>Remote:</strong> <code>https://jellyfin.&lt;tailnet&gt;.ts.net</code> → Tailscale container → <code>http://jellyfin:8096</code> over the stack's private network. This path never uses <code>ports:</code>; one container talks to another by service name.</li>
 </ul>
-</li>
-</ul>
+<p>Inside the container, Jellyfin only sees <code>/config</code>, <code>/cache</code> and <code>/media/...</code>. That's why its libraries point at <code>/media/movies</code>, not <code>/mnt/data/media/movies</code>.</p>
 
 
 
@@ -3908,7 +4646,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 18, 2026 19:05:52 UTC">February 18, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 14, 2026 19:35:38 UTC">November 14, 2026</span>
   </span>
 
     
